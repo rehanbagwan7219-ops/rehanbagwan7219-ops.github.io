@@ -1,55 +1,46 @@
-/* IMPORT COOL FONT */
+/* Google Font */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Raleway:wght@300;500&display=swap');
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
-/* ANIMATED BACKGROUND */
+/* BODY */
 
 body{
-height:100vh;
-background: linear-gradient(270deg,#0f2027,#203a43,#2c5364);
-background-size:600% 600%;
-animation:bgMove 12s ease infinite;
+font-family:'Raleway',sans-serif;
+background:#0f0f1a;
 color:white;
+line-height:1.6;
 }
 
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* NAVBAR */
+/* NAVIGATION BAR */
 
 nav{
 display:flex;
 justify-content:center;
+align-items:center;
 gap:30px;
-padding:20px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.2);
+padding:18px;
+background:#111;
+box-shadow:0 0 15px #00f7ff;
 }
 
 nav a{
+color:#00f7ff;
 text-decoration:none;
-color:white;
 font-size:18px;
-padding:8px 15px;
-border-radius:20px;
-transition:0.4s;
+padding:6px 14px;
+transition:0.3s;
+border-bottom:2px solid transparent;
 }
 
 nav a:hover{
-background:#00f2ff;
-color:black;
-box-shadow:0 0 15px #00f2ff;
+border-bottom:2px solid #00f7ff;
+text-shadow:0 0 10px #00f7ff;
 }
 
 /* HEADER */
@@ -57,16 +48,20 @@ box-shadow:0 0 15px #00f2ff;
 header{
 text-align:center;
 padding:60px 20px;
+background:linear-gradient(135deg,#141e30,#243b55);
 }
 
 header h1{
-font-size:50px;
-letter-spacing:2px;
+font-family:'Orbitron',sans-serif;
+font-size:45px;
+letter-spacing:3px;
+color:#00f7ff;
 }
 
 header p{
 margin-top:10px;
-opacity:0.8;
+font-size:18px;
+color:#ddd;
 }
 
 /* GRID LAYOUT */
@@ -78,49 +73,67 @@ gap:30px;
 padding:40px;
 }
 
-/* GLASS CARDS */
+/* CARD DESIGN */
 
 .card{
-background:rgba(255,255,255,0.1);
+background:#1a1a2e;
 border-radius:15px;
-padding:25px;
-backdrop-filter:blur(12px);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
+padding:20px;
+position:relative;
+transition:0.4s;
+overflow:hidden;
+}
+
+/* animated border */
+
+.card::before{
+content:"";
+position:absolute;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+background:linear-gradient(45deg,#00f7ff,#ff00ff,#00f7ff);
+z-index:-1;
+filter:blur(8px);
+opacity:0;
 transition:0.4s;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 15px 35px rgba(0,0,0,0.6);
+.card:hover::before{
+opacity:1;
 }
 
-/* MAP FRAME */
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* MAP */
 
 iframe{
 width:100%;
-height:250px;
+height:220px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 margin-top:10px;
 }
 
-/* BUTTON STYLE */
+/* BUTTON */
 
 .btn{
 display:inline-block;
 margin-top:15px;
 padding:10px 18px;
-border-radius:25px;
+border-radius:20px;
 text-decoration:none;
-font-size:15px;
 color:white;
-background:linear-gradient(45deg,#ff416c,#ff4b2b);
-transition:0.4s;
+background:#ff0080;
+transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 15px #ff4b2b;
+background:#ff4da6;
+box-shadow:0 0 10px #ff0080;
 }
 
 /* FOOTER */
@@ -128,35 +141,37 @@ box-shadow:0 0 15px #ff4b2b;
 footer{
 text-align:center;
 padding:20px;
-background:rgba(0,0,0,0.4);
-margin-top:40px;
+background:#111;
+margin-top:30px;
+color:#aaa;
 }
 
-/* SCROLLBAR DESIGN */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar{
 width:8px;
 }
 
 ::-webkit-scrollbar-track{
-background:#111;
+background:#0f0f1a;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#00f2ff;
+background:#00f7ff;
 border-radius:10px;
 }
 
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
 header h1{
-font-size:35px;
+font-size:30px;
 }
 
 nav{
 flex-wrap:wrap;
+gap:15px;
 }
 
 }
